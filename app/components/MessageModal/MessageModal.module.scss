@@ -1,0 +1,22 @@
+@keyframes messageReceived {
+    0%, 80% { opacity: 1; }
+    100%    { opacity: 0; }
+}
+
+.message_modal {
+    animation: 4s messageReceived;
+    background-color: #fff;
+    pointer-events: none;
+    position: absolute;
+    border-radius: 8px;
+    width: fit-content;
+    font-size: 16px;
+    margin: 0 auto;
+    bottom: 100px;
+    height: 40px;
+    padding: 6px;
+    opacity: 0;
+    z-index: 5;
+    right: 0;
+    left: 0;
+}

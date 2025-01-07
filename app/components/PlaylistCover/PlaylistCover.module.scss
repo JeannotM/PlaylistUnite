@@ -1,0 +1,112 @@
+$size: 260px;
+$blue_circle_size: calc($size / 5);
+
+/* Define the rotation animation */
+@keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+
+/* Define a separate rotation animation for the :after element with a different starting degree */
+@keyframes rotateAfter {
+    from {
+        transform: rotate(-35deg); /* Adjust the starting degree here */
+    }
+    
+    to {
+        transform: rotate(325deg); /* Adjust the ending degree here */
+    }
+}
+
+.playlist_cover {
+    -webkit-mask-image: radial-gradient(transparent 11px, black 12px);
+    mask-image: radial-gradient(transparent 11px, black 12px);
+    position: relative;
+    overflow: visible;
+    height: $size;
+    width: $size;
+    left: calc($size / 2 * -1);
+    top: 40px;
+
+    .image {
+        box-shadow: -4px -3px 0 0 rgba(0,0,0,.2);
+        animation: rotate 12s infinite linear;
+        background-repeat: no-repeat;
+        background-position: center;
+        transform-origin: center;
+        filter:brightness(1.6);
+        background-size:cover;
+        border-radius: 50%;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        z-index: 4;
+
+        &:before {
+            left: calc(50% - ($blue_circle_size / 2));
+            top: calc(50% - ($blue_circle_size / 2));
+            background-color: #1C81B0;
+            height: $blue_circle_size;
+            width: $blue_circle_size;
+            filter:brightness(1.25);
+            border-radius: 50%;
+            position:absolute;
+            content: "";
+            z-index: 4;
+        }
+
+        &.paused {
+            animation-play-state: paused;
+            -o-animation-play-state: paused;
+            -moz-animation-play-state: paused;
+            -webkit-animation-play-state: paused;
+
+            &:after {
+                animation-play-state: paused;
+                -o-animation-play-state: paused;
+                -moz-animation-play-state: paused;
+                -webkit-animation-play-state: paused;
+            }
+        }
+
+        &.running {
+            animation-play-state: running;
+            -o-animation-play-state: running;
+            -moz-animation-play-state: running;
+            -webkit-animation-play-state: running;
+
+            &:after {
+                animation-play-state: running;
+                -o-animation-play-state: running;
+                -moz-animation-play-state: running;
+                -webkit-animation-play-state: running;
+            }
+        }
+    
+        &.no_image:after {
+            opacity: 1.0
+        }
+    
+        &:after {
+            background-image: url("/vinyl\ overlay.png");
+            animation: rotateAfter 12s infinite linear;
+            animation-direction: reverse;
+            background-position: center;
+            transform: rotateZ(-35deg);
+            transform-origin: center;
+            background-size: cover;
+            border-radius: 50%;
+            position: relative;
+            display: block;
+            height: 100%;
+            width: 100%;
+            opacity: .6;
+            content: "";
+            z-index: 6;
+        }
+    }
+}

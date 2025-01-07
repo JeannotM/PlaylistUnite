@@ -1,0 +1,68 @@
+.page {
+  justify-content: space-around;
+  flex-direction: column;
+  display: flex;
+  height: 100%;
+}
+
+.playlist_containers {
+  max-width: calc(100% - 120px);
+  position: relative;
+  height: 100%;
+
+  @media (max-width: 992px) {
+    max-width: 100%;
+  }
+
+  .playlist_items {
+    flex-direction: row;
+    position: absolute;
+    overflow-y: scroll;
+    flex-wrap: wrap;
+    display: flex;
+    height: 100%;
+    width: 100%;
+  
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+  
+    &::-webkit-scrollbar-track {
+      background: #666; 
+      border-radius: 2px;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background: #888; 
+    }
+      
+    &::-webkit-scrollbar-thumb:hover {
+      background: #999;
+    }
+  }
+}
+
+
+.title_container {
+  display: block;
+  height: 40px;
+
+  .title {
+    display: inline-block;
+    margin: 0 15px 0 0;
+    font-weight: 700;
+    font-size: 32px;
+    color: #fff;
+  }
+
+  > button {
+    background: #1C81B0;
+    border-radius: 5px;
+    position: relative;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    border: none;
+    bottom: 3px;
+  }
+}

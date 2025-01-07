@@ -1,0 +1,44 @@
+.queue {
+    flex-direction: column;
+    position: relative;
+    color: #fff;
+    display:flex;
+    z-index: 2;
+    top: 50px;
+
+    .queue_name {
+        grid-template-columns: [title] 1fr [edit] 30px;
+        align-items: center;
+        display: grid;
+        margin: 8px;
+
+        > h2 {
+            grid-column: title;
+        }
+
+        > button {
+            grid-column: edit;
+            background: none;
+            border: none;
+        }
+    }
+
+    h2, h5 {
+        margin: 0;
+    }
+
+    .list {
+        flex-direction: column;
+        display: flex;
+        width: 100%;
+    }
+
+    .vertical_line {
+        background-color: #fff;
+        margin: 2px 0 2px 16px;
+        border-radius: 2px;
+        display: block;
+        height: 18px;
+        width: 2px;
+    }
+}

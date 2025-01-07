@@ -1,0 +1,27 @@
+.menu {
+    flex-direction: column;
+    background: #454545;
+    pointer-events: all;
+    height: fit-content;
+    position: absolute;
+    width: fit-content;
+    display: flex;
+    z-index: 5;
+
+    &[data-show="0"] {
+        display: none;
+    }
+    
+    button {
+        text-align: left;
+        background: none;
+        color: white;
+        border: none;
+        padding: 6px;
+        margin: 2px;
+
+        &:hover {
+            background-color: #555;
+        }
+    }
+}

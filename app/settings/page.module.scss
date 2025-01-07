@@ -1,0 +1,80 @@
+.settings {
+    margin-top: 10px;
+    width: 100%;
+
+    h1 {
+        color: white;
+    }
+
+    [id="table"] {
+        flex-direction: column;
+        width: 310px;
+        display: flex;
+        color: white;
+
+        div {
+            flex-direction: row;
+            font-size: 15px;
+            display: flex;
+            order: 0;
+
+            /** Header */
+            &:nth-child(1) {
+                font-weight: bold;
+            }
+
+            /** &#key didn't work */
+            &[id="key-"] {
+                order: 1;
+            }
+
+            &:has(p[data-id="add"]) {
+                min-width: 310px;
+                max-width: 310px;
+                flex-grow: 1;
+                order: 2;
+
+                > p {
+                    flex-grow: 1;
+                }
+            }
+
+            p  {
+                margin-bottom: 2px;
+
+
+                /** Extra key */
+                &:nth-child(1) {
+                    width: 65px;
+                }
+        
+                /** Key */
+                &:nth-child(2) {
+                    width: 90px;
+                }
+        
+                /** function */
+                &:nth-child(3) {
+                    width: 120px;
+                }
+        
+                /** Remove */
+                &:nth-child(4) {
+                    width: 35px;
+                }
+        
+                &[data-id="add"] > button, > input, > select, > button {
+                    border: 1px solid #252525;
+                    background-color: white;
+                    padding: 4px;
+                    height: 100%;
+                    width: 100%;
+                    margin: 0;
+                }
+            }
+        }
+        
+    }
+
+    
+}

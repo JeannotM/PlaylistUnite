@@ -1,0 +1,82 @@
+.display {
+    grid-template-columns: [image] 60px [name] 1fr;
+    margin: 5px 0;
+    display:grid;
+    width: 100%;
+
+    @media (max-width: 768px) {
+        grid-template-columns: [image] 40px [name] 1fr;
+    }
+
+    --trans-x: 0;
+    --time: 0;
+
+    @media (max-width: 768px) {
+        margin: 0;
+    }
+
+    > img {
+        background-color: #ccc;
+        border-radius: 10px;
+        grid-column: image;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+
+    > div {
+        text-overflow: ellipsis;
+        text-decoration: none;
+        white-space: nowrap;
+        align-self: center;
+        grid-column: name;
+        margin-left: 10px;
+        overflow:hidden;
+        width: 100%;
+
+        > p {
+            text-overflow: ellipsis;
+            text-decoration: none;
+            white-space: nowrap;
+            font-weight: 500;
+            font-size: 12px;
+            margin-bottom:0;
+            color: #ccc;
+            width: 100%;
+    
+            @media (max-width: 768px) {
+                font-size: 11px;
+            }
+        }
+
+        a {
+            animation: infiniteScroll infinite linear alternate;
+            animation-duration: var(--time);
+            text-overflow: ellipsis;
+            text-decoration: none;
+            white-space: nowrap;
+            position: relative;
+            font-weight: 600;
+            font-size: 16px;
+            display: block;
+            color: white;
+
+            @media (max-width: 768px) {
+                font-size: 14px;
+            }
+    
+            &:hover {
+                text-decoration: underline;
+    
+                > p {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+@keyframes infiniteScroll {
+    0%, 20%   { left: 0; } 
+    80%, 100% { left: var(--trans-x); }
+}
