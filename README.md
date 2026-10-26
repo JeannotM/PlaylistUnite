@@ -1,5 +1,5 @@
 # PlaylistUnite
-A webpage that can add music from SoundCloud and YouTube on one platform.
+A school project which allows you add music from SoundCloud and YouTube on one platform.
 
 ![](/docs/DEMO%20Playlist%20Unite.gif)
 
