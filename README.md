@@ -1,3 +1,12 @@
+# PlaylistUnite
+A webpage that can add music from SoundCloud and YouTube on one platform.
+
+![](/docs/DEMO%20Playlist%20Unite.gif)
+
+## TechStack
+- **Frontend:** React
+- **Backend:** NextJS
+
 ## Getting Started
 
 First, run the development server:
